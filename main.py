@@ -1,10 +1,12 @@
 from twilio.rest import Client
-#from urllib.error import HTTPError, URLError
+import os
 from urllib.request import urlopen
 import json
 
-SID = 'AC16c5f7cd9783460a0476ff7f8e6fcbdc'
-auth = '412eef4b9dc77914e1eb58ceef9be5b1'
+
+SID = os.getenv('SID')
+auth = os.getenv('auth')
+
 cl = Client(SID,auth)
 
 def get_state():
